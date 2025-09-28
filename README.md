@@ -12,8 +12,13 @@ Visit the itch.io to play!
 
 Controls:
 
-- AD and Space to move around / jump
-- J to shoot your cane
+A/D for left and right, space to jump / vault off ledges, and shift to dash in the direction you're moving in!
+
+J to throw your cane!
+
+Throwing your cane decreases your speed, but the faster you are, the stronger it is. 
+
+
 
 Shooting your cane decreases speed! Be careful.
 
