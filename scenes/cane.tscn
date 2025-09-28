@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://baihkduxweiyp"]
+
+[ext_resource type="Script" uid="uid://6d8q64fsipi1" path="res://scenes/cane.gd" id="1_n30yt"]
+[ext_resource type="Texture2D" uid="uid://dtset757iia01" path="res://assets/cane.png" id="2_77tqj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_633jo"]
+atlas = ExtResource("2_77tqj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0hui"]
+atlas = ExtResource("2_77tqj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwyfc"]
+atlas = ExtResource("2_77tqj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77tqj"]
+atlas = ExtResource("2_77tqj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8bi2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_633jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0hui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwyfc")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77tqj")
+}],
+"loop": true,
+"name": &"throw",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epsrq"]
+radius = 23.0217
+
+[node name="cane" type="Area2D"]
+script = ExtResource("1_n30yt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(3.3125, 2.9375)
+sprite_frames = SubResource("SpriteFrames_8bi2a")
+animation = &"throw"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.76
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_epsrq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

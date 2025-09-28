@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://djfqx0i3pait3"]
+
+[ext_resource type="Script" uid="uid://catkr1166hy47" path="res://scenes/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://dk3g2420k538n" path="res://assets/Enemies.png" id="2_md0e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipns3"]
+size = Vector2(25, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_md484"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy" type="Area2D"]
+collision_layer = 24
+collision_mask = 8
+script = ExtResource("1_md0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_ipns3")
+debug_color = Color(0.560314, 0.552589, 0.259583, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-2, -2)
+sprite_frames = SubResource("SpriteFrames_md484")
+autoplay = "default"
+
+[node name="left_cast" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(18, 0)
+collision_mask = 16
+collide_with_areas = true
+
+[node name="right_cast" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-18, 0)
+collision_mask = 16
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

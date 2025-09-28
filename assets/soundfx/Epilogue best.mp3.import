@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7wflei3p20o4"
+path="res://.godot/imported/Epilogue best.mp3-38638f0a3d7fcb8d6d3bdb2e4cd59414.mp3str"
+
+[deps]
+
+source_file="res://assets/soundfx/Epilogue best.mp3"
+dest_files=["res://.godot/imported/Epilogue best.mp3-38638f0a3d7fcb8d6d3bdb2e4cd59414.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
