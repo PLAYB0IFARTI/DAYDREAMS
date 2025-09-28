@@ -2,11 +2,15 @@
 
 A movement focused platformer, in which you, a pebble, must balance moving around speedily with killing enemies. Shoot your cane to beat up your eternal nemesis: Paper!
 
+This is more of a tech demo more than an actual game.
+
 ---
 
 ## Demo / Website
 
 Visit the itch.io to play!
+
+https://playboifartied.itch.io/rock-beats-paper
 
 ---
 
