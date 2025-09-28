@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://j0e0404iyor1"]
+
+[ext_resource type="Script" uid="uid://dys78bve74b1o" path="res://scenes/ledge.gd" id="1_cn3sm"]
+[ext_resource type="AudioStream" uid="uid://b632no4ea6l6i" path="res://assets/soundfx/ledgegrab.mp3" id="2_knhen"]
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_cn3sm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0.85911, 0.292547, 0.55591, 0.42)
+
+[node name="Ledgegrab" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_knhen")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

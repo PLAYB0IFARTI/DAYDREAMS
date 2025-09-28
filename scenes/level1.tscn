@@ -1,0 +1,317 @@
+[gd_scene load_steps=24 format=4 uid="uid://budvkbg7k3jgm"]
+
+[ext_resource type="Script" uid="uid://bni6x623dhbkm" path="res://scenes/level_1.gd" id="1_2ku1j"]
+[ext_resource type="PackedScene" uid="uid://j0e0404iyor1" path="res://scenes/ledge.tscn" id="1_dwgg1"]
+[ext_resource type="Texture2D" uid="uid://de0w242kq6xg3" path="res://assets/brackeys_platformer_assets (1)/brackeys_platformer_assets/sprites/world_tileset.png" id="1_wwpf4"]
+[ext_resource type="PackedScene" uid="uid://nooabmmurg4w" path="res://scenes/pebble.tscn" id="2_m7ahb"]
+[ext_resource type="PackedScene" uid="uid://7mwiggrfnfcq" path="res://scenes/enemyborder.tscn" id="3_conm7"]
+[ext_resource type="PackedScene" uid="uid://dh8dv71o1qiwx" path="res://scenes/killzone.tscn" id="3_m7ahb"]
+[ext_resource type="PackedScene" uid="uid://d0g8slxxmhut" path="res://scenes/game_manager.tscn" id="5_6sh32"]
+[ext_resource type="PackedScene" uid="uid://djfqx0i3pait3" path="res://scenes/enemy.tscn" id="6_d3jkd"]
+[ext_resource type="PackedScene" uid="uid://bwqccra3j8v32" path="res://scenes/gui.tscn" id="6_ejswk"]
+[ext_resource type="PackedScene" uid="uid://c5wt7lqgcifdc" path="res://scenes/wall_jump.tscn" id="7_ejswk"]
+[ext_resource type="PackedScene" uid="uid://baihkduxweiyp" path="res://scenes/cane.tscn" id="8_d3jkd"]
+[ext_resource type="AudioStream" uid="uid://drh7ycm3dur51" path="res://assets/soundfx/Main theme for Hackathon game.mp3" id="12_f31uk"]
+[ext_resource type="Texture2D" uid="uid://dea1rhkgy220q" path="res://assets/background_normal.png" id="13_f31uk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3awl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru4tf"]
+size = Vector2(14, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwgg1"]
+size = Vector2(24, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f31uk"]
+size = Vector2(33, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnai3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwgg1"]
+texture = ExtResource("1_wwpf4")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ru4tf"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_dwgg1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7ahb"]
+size = Vector2(2046, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejswk"]
+size = Vector2(18, 47)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2ku1j")
+
+[node name="GameManager" parent="." instance=ExtResource("5_6sh32")]
+unique_name_in_owner = true
+
+[node name="map" type="Node" parent="."]
+
+[node name="enemy borders" type="Node" parent="map"]
+
+[node name="enemyborder" parent="map/enemy borders" instance=ExtResource("3_conm7")]
+position = Vector2(377, -25)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/enemy borders/enemyborder"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_u3awl")
+
+[node name="enemyborder2" parent="map/enemy borders" instance=ExtResource("3_conm7")]
+position = Vector2(216, -28)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/enemy borders/enemyborder2"]
+position = Vector2(7, 2)
+shape = SubResource("RectangleShape2D_2ku1j")
+
+[node name="ledge list" type="Node" parent="map"]
+
+[node name="ledge1" parent="map/ledge list" instance=ExtResource("1_dwgg1")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/ledge list/ledge1"]
+position = Vector2(-1, 74.5)
+shape = SubResource("RectangleShape2D_ru4tf")
+debug_color = Color(0.860937, 0.302647, 0.513484, 0.42)
+
+[node name="ledge2" parent="map/ledge list" instance=ExtResource("1_dwgg1")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/ledge list/ledge2"]
+position = Vector2(138, 53)
+shape = SubResource("RectangleShape2D_dwgg1")
+debug_color = Color(0.247632, 0.621784, 0.385945, 0.42)
+
+[node name="Area2D" parent="map/ledge list" instance=ExtResource("1_dwgg1")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/ledge list/Area2D"]
+position = Vector2(389.5, -4.5)
+shape = SubResource("RectangleShape2D_f31uk")
+
+[node name="ledge4" parent="map/ledge list" instance=ExtResource("1_dwgg1")]
+position = Vector2(654.929, -12.1496)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/ledge list/ledge4"]
+shape = SubResource("RectangleShape2D_gnai3")
+
+[node name="TileMap" type="TileMap" parent="map"]
+use_parent_material = true
+tile_set = SubResource("TileSet_ru4tf")
+format = 2
+layer_0/tile_data = PackedInt32Array(196617, 0, 0, 196618, 0, 0, 458751, 0, 0, 458750, 0, 0, 458749, 0, 0, 458748, 0, 0, 458747, 0, 0, 393210, 0, 0, 393209, 0, 0, 24, 0, 1, 65560, 0, 1, 131096, 0, 1, 196632, 0, 1, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0)
+
+[node name="Layer1" type="TileMapLayer" parent="map/TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAIAAAAAAAEAAAAMAAEAAAAAAAEAAAAMAAAAAAAAAAEAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_ru4tf")
+
+[node name="Layer2" type="TileMapLayer" parent="map/TileMap"]
+use_parent_material = true
+tile_set = SubResource("TileSet_ru4tf")
+
+[node name="killzone" parent="map" instance=ExtResource("3_m7ahb")]
+position = Vector2(-120, 64)
+collision_layer = 1
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/killzone"]
+position = Vector2(503, 99)
+shape = SubResource("RectangleShape2D_m7ahb")
+
+[node name="entities" type="Node" parent="."]
+
+[node name="pebble" parent="entities" instance=ExtResource("2_m7ahb")]
+unique_name_in_owner = true
+position = Vector2(60, 15)
+collision_layer = 11
+collision_mask = 11
+
+[node name="enemy" parent="entities" instance=ExtResource("6_d3jkd")]
+position = Vector2(308, -27)
+collision_layer = 8
+collision_mask = 56
+
+[node name="cane" parent="entities" instance=ExtResource("8_d3jkd")]
+collision_layer = 32
+collision_mask = 40
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_ejswk")]
+unique_name_in_owner = true
+
+[node name="wall_jump" parent="." instance=ExtResource("7_ejswk")]
+position = Vector2(194, 24)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_jump"]
+position = Vector2(1, -4.5)
+shape = SubResource("RectangleShape2D_ejswk")
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_f31uk")
+volume_db = 6.559
+parameters/looping = true
+
+[node name="BackgroundNormal" type="Sprite2D" parent="."]
+position = Vector2(284, -4)
+texture = ExtResource("13_f31uk")
+
+[node name="BackgroundNormal2" type="Sprite2D" parent="."]
+position = Vector2(1202, -4)
+texture = ExtResource("13_f31uk")

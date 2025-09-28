@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5wt7lqgcifdc"]
+
+[ext_resource type="Script" uid="uid://cprg8bb5ggr3m" path="res://scenes/wall_jump.gd" id="1_4yl8u"]
+
+[node name="wall_jump" type="Area2D"]
+script = ExtResource("1_4yl8u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwqccra3j8v32"]
+
+[ext_resource type="Script" uid="uid://dfpu8jd5dxenx" path="res://scenes/gui.gd" id="1_efmwq"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_efmwq")
+
+[node name="health" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="speed" type="Label" parent="."]
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 39.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HPBAR" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SPEEDBAR" type="TextureProgressBar" parent="."]
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+max_value = 500.0
+rounded = true
